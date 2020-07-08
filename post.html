@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,12 @@
   <link rel="stylesheet" href="/css/styles.css">
   <title>Post One</title>
 </head>
+
 <body id="home">
   <header class="hero blog">
-    <div id="navbar" class="navbar">
+    <div id="navbar" class="navbar top">
       <h1 class="logo">
-    <span class="text-primary"><i class="fas fa-book-open"></i>Edge</span>Ledger
+        <span class="text-primary"><i class="fas fa-book-open"></i>Edge</span>Ledger
       </h1>
       <nav>
         <ul>
@@ -25,20 +27,28 @@
       </nav>
     </div>
     <div class="content">
-      <h1>Blog</h1>      
+      <h1>Blog</h1>
     </div>
   </header>
 
   <main>
-   <section class="post">
-     <h2>Blog Post</h2>
-     <p class="meta">
-      <i class="fas fa-user"></i> Posted by <strong>William Grove</strong> | May 17 2020
-    </p>
-    <img src="img/blog/blog1.jpg" alt="">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eum obcaecati ab error, labore eius? Accusamus voluptate nemo odio quibusdam labore earum magni, maxime vero rem veritatis omnis, est magnam?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos atque, blanditiis impedit amet itaque voluptatibus vero fugiat exercitationem nisi unde omnis fugit repellat magnam rerum explicabo provident voluptate maiores eum pariatur similique. Maxime repudiandae et nemo consequuntur animi tenetur ipsam necessitatibus quam, suscipit sed amet rem qui sint adipisci aspernatur ad velit ab consectetur aut quisquam unde asperiores. Voluptatem, unde.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero animi quam, excepturi pariatur facilis, sequi ipsam quis soluta quisquam quos, aperiam dolores necessitatibus perferendis iste? Consequatur beatae eos ullam quasi adipisci dolor sunt. Hic, quasi repudiandae fugit voluptates, odit reiciendis excepturi saepe mollitia eveniet eius quam obcaecati consectetur doloremque consequatur.</p>
+    <section class="post">
+      <h2>Blog Post</h2>
+      <p class="meta">
+        <i class="fas fa-user"></i> Posted by <strong>William Grove</strong> | May 17 2020
+      </p>
+      <img src="img/blog/blog1.jpg" alt="">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eum obcaecati ab error, labore eius?
+        Accusamus voluptate nemo odio quibusdam labore earum magni, maxime vero rem veritatis omnis, est magnam?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos atque, blanditiis impedit amet itaque voluptatibus
+        vero fugiat exercitationem nisi unde omnis fugit repellat magnam rerum explicabo provident voluptate maiores eum
+        pariatur similique. Maxime repudiandae et nemo consequuntur animi tenetur ipsam necessitatibus quam, suscipit
+        sed amet rem qui sint adipisci aspernatur ad velit ab consectetur aut quisquam unde asperiores. Voluptatem,
+        unde.</p>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero animi quam, excepturi pariatur facilis, sequi
+        ipsam quis soluta quisquam quos, aperiam dolores necessitatibus perferendis iste? Consequatur beatae eos ullam
+        quasi adipisci dolor sunt. Hic, quasi repudiandae fugit voluptates, odit reiciendis excepturi saepe mollitia
+        eveniet eius quam obcaecati consectetur doloremque consequatur.</p>
     </section>
   </main>
 
@@ -51,5 +61,28 @@
     </div>
     <p>Copyright &copy; 2020 - EdgeLedger</p>
   </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    let scrolled = false;
+
+    window.onscroll = function () {
+      if (window.pageYOffset > 100) {
+        navbar.classList.remove('top');
+        if (!scrolled) {
+          navbar.style.transform = 'translateY(-70px)';
+        }
+        setTimeout(function () {
+          navbar.style.transform = 'translateY(0px)';
+          scrolled = true;
+        }, 200)
+      }
+      else {
+        navbar.classList.add('top');
+        scrolled = false;
+      }
+    }
+  </script>
 </body>
+
 </html>
